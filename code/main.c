@@ -149,7 +149,7 @@ void del(){
 
 
 int main(){
-    FILE *file = fopen(FILENAME, "r");
+    FILE *file = fopen("data.txt", "r");
     if (file != NULL) {
         // 逐行读取文件内容并解析到商品数组中
         for (int i = 1; i < 11; i++) {

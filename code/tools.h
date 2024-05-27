@@ -20,7 +20,7 @@ void control(){
         case 4:
             printf("谢谢使用，再见！\n");
             // 退出系统前保存数据到文件
-            FILE *file = fopen(FILENAME, "w");
+            FILE *file = fopen("data.txt", "w");
             file = fopen(FILENAME, "w");
             if (file != NULL) {
                 for (int i = 1; i < 11 ; i++) {
