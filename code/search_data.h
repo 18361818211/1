@@ -9,12 +9,14 @@ void part2(){
     scanf("%d",&j);
     
     for(int i=1;i<11;i++){
+        if(a[i][j].sign){
             puts(a[i][j].name);
             printf("价格:%d/包\n",a[i][j].price);
             printf("还剩%d包\n",a[i][j].number);
             printf("生产日期：%d年%d月%d日\n",a[i][j].sc.year,a[i][j].sc.month,a[i][j].sc.day);
             printf("保质日期：%d年%d月%d日\n",a[i][j].jz.year,a[i][j].jz.month,a[i][j].jz.day);
             printf("\n");
+            }
 
         }
     printf("若想查询其它信息输入1,输入0表示返回上一界面\n");

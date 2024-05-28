@@ -23,6 +23,7 @@ void control(){
             FILE *file = fopen("data.txt", "w");
             file = fopen(FILENAME, "w");
             if (file != NULL) {
+                fprintf(file,"%s %s\n",zh,mm);
                 for (int i = 1; i < 11 ; i++) {
                     for (int j = 1; j < 7; j++) {
                         fprintf(file, "%s %d %d %d %d %d %d %d %d %d\n",

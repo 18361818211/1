@@ -9,6 +9,19 @@
 
 
 
+void  Choice(void){
+    printf("1:继续\n0:退出\n");
+    int Pick;
+    scanf("%d",&Pick);
+    if(Pick!=0 && Pick!=1){
+        printf("ERROR!!!\nTRY AGAIN!!!\n");
+        Choice();
+    }
+    if(Pick)
+        add();
+       
+    control();
+}
 
 void add(){
     printf("\n");
@@ -55,17 +68,10 @@ void add(){
     scanf("%d %d %d",&p->sc.year,&p->sc.month,&p->sc.day);
     printf("请输入过期日期:\n");
     scanf("%d %d %d",&p->jz.year,&p->jz.month,&p->jz.day);
-
     p->sign=1;
 
     printf("添加完成，是否要继续添加还是退出？\n");
-    printf("1:继续\n0:退出\n");
-    int pick;
-    scanf("%d",&pick);
-    if(pick)
-        add();
-
-    control();
+    Choice();
 
 
 }
@@ -152,15 +158,17 @@ int main(){
     FILE *file = fopen("data.txt", "r");
     if (file != NULL) {
         // 逐行读取文件内容并解析到商品数组中
+        fscanf(file,"%s %s\n",zh,mm);
         for (int i = 1; i < 11; i++) {
             for (int j =1 ; j < 7; j++) {
                 fscanf(file, "%s %d %d %d %d %d %d %d %d %d",
-                       a[i][j].name, &a[i][j].price, &a[i][j].number,
+                       &a[i][j].name, &a[i][j].price, &a[i][j].number,
                        &a[i][j].sc.year, &a[i][j].sc.month, &a[i][j].sc.day,
                        &a[i][j].jz.year, &a[i][j].jz.month, &a[i][j].jz.day,
                        &a[i][j].sign);
             }
         }
+
         fclose(file);
         printf("数据读取成功\n");
         printf("\n");
