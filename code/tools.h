@@ -3,6 +3,7 @@
 
 void control(){
     system("cls");
+    printf("登陆成功!\n");
     printf("请选择你要进行的操作:\n");
     printf("1.商品信息查询\n2.添加货物功能\n3.删除货物功能\n4.退出\n");
     int choice;

@@ -8,6 +8,7 @@ char mm[20];
 
 
 int part1(void){
+    
     printf("请输入您的账号和密码：\n");
     char s1[20];
     char s2[20];
@@ -27,7 +28,8 @@ int part1(void){
     cnt++;
 
     if(cnt==3){
-        printf("请重设账号密码!\n\n\n");
+        system("cls");
+        printf("请重设账号密码!\n\n");
         printf("请输入你要重设的账号:\n");
         gets(zh);
 
@@ -42,10 +44,8 @@ int part1(void){
 
     printf("账号或密码错误请重试！\n");
 
-   
     printf("\n");
     part1();
 
-    
     
 }
