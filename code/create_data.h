@@ -20,7 +20,7 @@ struct shangpin{
     struct begin sc;
     struct end jz;
     int sign;
-}a[11][7];
+}a[31][7];
 
 
 

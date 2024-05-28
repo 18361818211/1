@@ -8,7 +8,7 @@ void part2(){
     int j;
     scanf("%d",&j);
     
-    for(int i=1;i<11;i++){
+    for(int i=1;i<31;i++){
         if(a[i][j].sign){
             puts(a[i][j].name);
             printf("价格:%d/包\n",a[i][j].price);

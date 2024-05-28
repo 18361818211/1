@@ -3,7 +3,6 @@
 
 void control(){
     system("cls");
-    printf("登陆成功!\n");
     printf("请选择你要进行的操作:\n");
     printf("1.商品信息查询\n2.添加货物功能\n3.删除货物功能\n4.退出\n");
     int choice;
@@ -25,7 +24,7 @@ void control(){
             file = fopen(FILENAME, "w");
             if (file != NULL) {
                 fprintf(file,"%s %s\n",zh,mm);
-                for (int i = 1; i < 11 ; i++) {
+                for (int i = 1; i < 31 ; i++) {
                     for (int j = 1; j < 7; j++) {
                         fprintf(file, "%s %d %d %d %d %d %d %d %d %d\n",
                         a[i][j].name, a[i][j].price, a[i][j].number,

@@ -36,6 +36,10 @@ int part1(void){
         printf("请输入你要重设的密码:\n");
         gets(mm);
 
+        system("cls");
+
+        printf("账号密码已修改!\n");
+
         part1();
 
         
