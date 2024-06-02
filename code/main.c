@@ -6,8 +6,46 @@
 #include"create_data.h"
 #include"search_data.h"
 #include"tools.h"
-#define FILENAME "data.txt"
 
+void  Choice(void);
+void add();
+void sort(int x,int y);
+void del();
+
+
+int main(){
+    FILE *file = fopen("data.txt", "r");
+    if (file != NULL) {
+        // 逐行读取文件内容并解析到商品数组中
+        fscanf(file,"%s %s\n",zh,mm);
+        for (int i = 1; i < 11; i++) {
+            for (int j =1 ; j < 7; j++) {
+                fscanf(file, "%s %d %d %d %d %d %d %d %d %d",
+                       &a[i][j].name, &a[i][j].price, &a[i][j].number,
+                       &a[i][j].sc.year, &a[i][j].sc.month, &a[i][j].sc.day,
+                       &a[i][j].jz.year, &a[i][j].jz.month, &a[i][j].jz.day,
+                       &a[i][j].sign);
+            }
+        }
+
+        fclose(file);
+        printf("数据读取成功\n");
+        printf("\n");
+    } else 
+        printf("数据文件不存在，将创建新文件\n");
+
+
+                    
+    if(part1()){
+        control();
+
+    }
+//000
+//，啊，s
+
+
+    return 0;
+ }
 
 
 void  Choice(void){
@@ -77,7 +115,6 @@ void add(){
 
 }
 
-
 void sort(int x,int y){
     for ( x; x < 11; x++ ) {
         
@@ -90,7 +127,6 @@ void sort(int x,int y){
 
     }
 }
-
 
 void del(){
     system("cls");
@@ -149,44 +185,5 @@ void del(){
     control();
 
 
-
-
 }
-
-
-
-int main(){
-    FILE *file = fopen("data.txt", "r");
-    if (file != NULL) {
-        // 逐行读取文件内容并解析到商品数组中
-        fscanf(file,"%s %s\n",zh,mm);
-        for (int i = 1; i < 11; i++) {
-            for (int j =1 ; j < 7; j++) {
-                fscanf(file, "%s %d %d %d %d %d %d %d %d %d",
-                       &a[i][j].name, &a[i][j].price, &a[i][j].number,
-                       &a[i][j].sc.year, &a[i][j].sc.month, &a[i][j].sc.day,
-                       &a[i][j].jz.year, &a[i][j].jz.month, &a[i][j].jz.day,
-                       &a[i][j].sign);
-            }
-        }
-
-        fclose(file);
-        printf("数据读取成功\n");
-        printf("\n");
-    } else 
-        printf("数据文件不存在，将创建新文件\n");
-
-
-                    
-    if(part1()){
-        control();
-
-    }
-//000
-//，啊，s
-
-
-    return 0;
- }
-
 
